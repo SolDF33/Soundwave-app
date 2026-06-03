@@ -1,0 +1,86 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    padding: 40px 0;
+    background: linear-gradient(to bottom, #1db95422, #121212);
+}
+
+h1 {
+    color: #1DB954;
+    font-weight: 800;
+}
+
+.card-custom {
+    background-color: #181818;
+    border: 1px solid #282828;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.table {
+    color: #b3b3b3;
+    border-color: #282828;
+}
+
+.table thead th {
+    border-bottom: 1px solid #282828;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.text-duration {
+    font-family: 'Courier New', Courier, monospace;
+    color: #1DB954;
+}
+
+.table tbody tr td.titulo-cancion {
+    color: #ffffff;
+}
+
+.btn-spotify {
+    background-color: #1DB954;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 12px 30px;
+    border: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-spotify:hover {
+    background-color: #1ed760;
+    transform: scale(1.05); 
+    color: white;
+}
+
+#contenedor-tabla {
+    display: none; 
+}
+/* Correcciones finales para visibilidad */
+.table {
+    background-color: #ffffff; /* Si prefieres el fondo blanco de la captura */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table tbody tr td {
+    color: #000000 !important; /* Fuerza el texto a color negro */
+    vertical-align: middle;
+    padding: 12px;
+}
+
+.titulo-cancion {
+    color: #1DB954 !important; /* Resalta el título en verde Spotify */
+    font-weight: bold;
+}
+
+.text-duration {
+    font-weight: 500;
+}
