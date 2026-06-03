@@ -1,15 +1,15 @@
-# SoundWave - Redis Cache ??
+# SoundWave - Redis Cache 
 
-Optimización de rendimiento mediante **Paginación** y estrategia de caché **Cache-Aside**.
+OptimizaciÃ³n de rendimiento mediante **PaginaciÃ³n** y estrategia de cachÃ© **Cache-Aside**.
 
-## ?? Cómo Ejecutar
+## CÃ³mo Ejecutar
 
 1. **Levantar Redis (Docker):**
-   \\\ash
+   \\\bash
    docker run -d --name redis-soundwave -p 6379:6379 redis
    \\\
 2. **Instalar dependencias e iniciar:**
-   \\\ash
+   \\\bash
    npm install
    node index.js
    \\\
@@ -17,21 +17,21 @@ Optimización de rendimiento mediante **Paginación** y estrategia de caché **Cach
 
 ---
 
-## ?? Funcionamiento (Cache-Aside)
+## Funcionamiento (Cache-Aside)
 
-* **Paginación:** Trae el catálogo en bloques de a 20 canciones para evitar la saturación del navegador.
-* **HIT:** Si la página ya se consultó, se sirve instantáneamente desde la RAM (Redis).
+* **PaginaciÃ³n:** Trae el catï¿½logo en bloques de a 20 canciones para evitar la saturaciÃ³n del navegador.
+* **HIT:** Si la pÃ¡gina ya se consultÃ³, se sirve instantÃ¡neamente desde la RAM (Redis).
 * **MISS:** Si es la primera vez, se busca en PostgreSQL y se guarda en Redis con un **TTL de 60 segundos**.
 
 ---
 
-## ?? Evidencias de Funcionamiento
+## Evidencias de Funcionamiento
 
-### ??? Interfaz de Usuario (Frontend)
+###  Interfaz de Usuario (Frontend)
 * **Pantalla de Inicio:** ![Inicio](./screenshots/app-inicio.png)
-* **Catálogo Paginado:** ![Canciones](./screenshots/app-canciones.png)
-* **Navegación entre Páginas:** ![Páginas](./screenshots/app-paginas.png)
+* **CatÃ¡logo Paginado:** ![Canciones](./screenshots/app-canciones.png)
+* **NavegaciÃ³n entre PÃ¡ginas:** ![Pï¿½ginas](./screenshots/app-paginas.png)
 
-### ?? Logs del Servidor (Backend)
-Al consultar una página por primera vez se lee desde el disco (PostgreSQL). Al regresar a ella, la caché se activa y responde directamente desde la memoria RAM:  
+### Logs del Servidor (Backend)
+Al consultar una pÃ¡gina por primera vez se lee desde el disco (PostgreSQL). Al regresar a ella, la cachï¿½ se activa y responde directamente desde la memoria RAM:  
 ![Terminal](./screenshots/terminal-corriendo.png)
